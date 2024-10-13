@@ -1,6 +1,6 @@
 ## LIDS
 
-Also called LinkedIn Data Scraper, is designed to scrape publicly accessible LinkedIn profile information, including company details, user data, and individual profiles. It is helpful for users looking to gather large amounts of LinkedIn data for analytics, research, or personal use.
+LinkedIn Data Scraper, is designed to scrape publicly accessible LinkedIn profile information, including company details, user data, and individual profiles. It is helpful for users looking to gather large amounts of LinkedIn data for analytics, research, or personal use.
 
 ## Why LIDS?
 
