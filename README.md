@@ -1,4 +1,4 @@
-# LIDS
+## LIDS
 
 Also called LinkedIn Data Scraper, is designed to scrape publicly accessible LinkedIn profile information, including company details, user data, and individual profiles. It is helpful for users looking to gather large amounts of LinkedIn data for analytics, research, or personal use.
 
@@ -6,21 +6,21 @@ Also called LinkedIn Data Scraper, is designed to scrape publicly accessible Lin
 
 LIDS provides an efficient way to gather publicly available information from LinkedIn profiles for use in business research, competitor analysis, or personal network management. Whether you're tracking companies in your industry or analyzing profiles for hiring or data insights, LIDS simplifies the process of scraping and organizing relevant information.
 
-## Example Use Cases:
+## Example Use Cases
 
 - **Company Research**: Scrape company profiles to analyze key metrics like company size, industry, and latest updates for competitors or market analysis.
 - **Recruitment**: Gather detailed information on prospective candidates based on job roles, education, and experience.
 - **Data Analytics**: Use scraped data to build models for trend analysis in job markets, geographic distributions, or talent acquisition.
 
-## Data Scraping Disclaimer:
+## Data Scraping Disclaimer
 
 This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure that you comply with LinkedIn's terms of service and avoid using the scraper in ways that may violate their usage policies or any applicable laws. LinkedIn data belongs to its users, and their privacy should be respected. Avoid misuse or re-selling of scraped data. Use LIDS responsibly.
 
 ## Features
 
-1. Scrape LinkedIn company profiles to extract company details.
-2. Scrape multiple user profiles based on names.
-3. Scrape specific user profile with detailed information.
+- Scrape LinkedIn company profiles to extract company details.
+- Scrape multiple user profiles based on names.
+- Scrape specific user profile with detailed information.
 
 ## Installation
 
@@ -49,7 +49,7 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
 
 ## Usage
 
-### Scraping Company Data:
+### Scraping Company Data
 
 1. Open the `company_profile_scraper.py` file.
 
@@ -84,7 +84,7 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
    }
    ```
 
-### Scraping Multiple User Profiles:
+### Scraping Multiple User Profiles
 
 1. Open `users_profile.py`.
 
@@ -116,7 +116,7 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
 
 ```
 
-### Scraping Specific User Profile:
+### Scraping Specific User Profile
 
 1. Open `user_profile_scraper.py`.
 
@@ -371,7 +371,7 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
     }
    ```
 
-## Error Handling:
+## Error Handling
 
 - Rate Limiting: If you are blocked, consider adding delays between requests or using proxies.
 - Parsing Errors: Occasionally, LinkedIn may update its HTML structure, causing the scraper to break. In such cases, raise an issue or submit a pull request.
