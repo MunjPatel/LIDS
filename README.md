@@ -1,6 +1,16 @@
 # LIDS (LinkedIn Data Scraper)
 
-This Python-based application leverages Charles Proxy, requests, and BeautifulSoup to extract publicly accessible information from LinkedIn profiles.
+This tool is designed to scrape publicly accessible LinkedIn profile information, including company details, user data, and individual profiles. It is helpful for users looking to gather large amounts of LinkedIn data for analytics, research, or personal use.
+
+## Data Scraping Disclaimer:
+
+This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure that you comply with LinkedIn's terms of service and avoid using the scraper in ways that may violate their usage policies or any applicable laws. Use responsibly.
+
+## Features
+
+1. Scrape LinkedIn company profiles to extract company details.
+2. Scrape multiple user profiles based on names.
+3. Scrape specific user profile with detailed information.
 
 ## Installation
 
@@ -29,19 +39,19 @@ This Python-based application leverages Charles Proxy, requests, and BeautifulSo
 
 ## Usage
 
-### Scrape company data
+### Scraping Company Data:
 
 1. Open the `company_profile_scraper.py` file.
 
-2. Update the `url` variable with the link of the company.
+2. Update the `url` variable with the LinkedIn company URL. 
 
-3. Run the `company_profile_scraper.py` file:
+3. Run the scraper:
 
     ```bash
     python company_profile_scraper.py
     ```
 
-4. The script will fetch available data from the profile. For example, for https://www.linkedin.com/company/google?originalSubdomain=in, the output will be in format:
+4. Example Output: JSON data of the company:
 
    ```bash
    {
@@ -60,23 +70,23 @@ This Python-based application leverages Charles Proxy, requests, and BeautifulSo
     "logo_url": null,
     "cover_image_url": null,
     "employees": null,
-    "latest_updates": null}
+    "latest_updates": null
+   }
    ```
 
-### Scrape users data
+### Scraping Multiple User Profiles:
 
+1. Open `users_profile.py`.
 
-1. Open the `users_profile.py` file.
+2. Update the `first_name` and `last_name` variables.
 
-2. Update the `first_name` and `last_name` variables with the user profiles you intend to find.
-
-3. Run the `users_profile.py` file:
+3. Run the script:
 
     ```bash
     python users_profile.py
     ```
 
-4. The script will fetch available data of profiles with given first and last name. For example, for `first_name='Shreya'` and `last_name='Patel'` , the output will be in format:
+4. Example Output: A table of matching profiles:
 
 ```bash
             name                                           subtitle  ...                                          education                                        profile_url
@@ -91,65 +101,27 @@ This Python-based application leverages Charles Proxy, requests, and BeautifulSo
 8   Shreya Patel                         Human Resources management  ...                           York University, +2 more  https://nz.linkedin.com/in/shreyapatel183?trk=...    
 9   Shreya Patel                                                     ...                                          , +1 more  https://www.linkedin.com/in/shreya-d-patel?trk...    
 10  Shreya Patel  Doctoral Candidate| Oncology and Rare Bone Dis...  ...                                                     https://www.linkedin.com/in/shreya-patel-0504?...    
-11  Shreya Patel                                                     ...                                                     https://www.linkedin.com/in/shreya-patel-5a3b9...    
-12  Shreya Patel                                                     ...                                                     https://ca.linkedin.com/in/imshreyapatel?trk=p...    
-13  Shreya Patel                                                     ...                                                     https://uk.linkedin.com/in/shreyapatel941?trk=...    
-14     Shreya P.                                                     ...                                          , +1 more  https://www.linkedin.com/in/snp116?trk=people-...    
-15  Shreya Patel  MBA Candidate at Texas McCombs | Consortium Me...  ...          Texas McCombs School of Business, +3 more  https://www.linkedin.com/in/shreya-patel9817?t...    
-16     Shreya P.                                                     ...                                                     https://www.linkedin.com/in/shreyapat?trk=peop...    
-17  Shreya Patel  Student at the University of California, Berke...  ...        University of California, Berkeley, +2 more  https://www.linkedin.com/in/shreyapatel5?trk=p...    
-18  Shreya Patel             Senior Scrum Master at JP Morgan Chase  ...                                                     https://www.linkedin.com/in/shreya-patel-a0394...    
-19  Shreya Patel                                                     ...                                          , +2 more  https://www.linkedin.com/in/shreya-patel-39766...    
-20  Shreya Patel                                                     ...                                          , +2 more  https://www.linkedin.com/in/shreya-patel-11b81...    
-21  Shreya Patel                                                     ...                                                     https://www.linkedin.com/in/shreyaapatel?trk=p...    
-22  Shreya Patel                     SDE II at Amazon | IIT Jodhpur  ...   Indian Institute of Technology, Jodhpur, +2 more  https://in.linkedin.com/in/shreya-hasmukh-pate...    
-23  Shreya Patel  Human Resources Analyst @ London Luton Airport...  ...                                                     https://uk.linkedin.com/in/iamshreyapatel?trk=...    
-24  Shreya Patel  Honors Marketing Student at the University of ...  ...                   University of San Diego, +1 more  https://www.linkedin.com/in/shreya-dharmesh-pa...    
-25  Shreya Patel                Software Engineer at Morgan Stanley  ...                              University of Calgary  https://ca.linkedin.com/in/shreyapatel-984?trk...    
-26  Shreya Patel  Student at Carleton University for Aerospace E...  ...                       Carleton University, +1 more  https://ca.linkedin.com/in/shreya-s-patel?trk=...    
-27     Shreya P.               Software Engineer | Python | MongoDB  ...                                                     https://in.linkedin.com/in/shreyapatel228?trk=...    
-28  Shreya Patel  Results-driven Digital Marketing Specialist | ...  ...                            Mohawk College, +2 more  https://ca.linkedin.com/in/shreyapatel1996?trk...    
-29  SHREYA PATEL  Architect | Pursuing Construction Management &...  ...                  Arizona State University, +1 more  https://www.linkedin.com/in/19shreyapatel?trk=...    
-30  Shreya Patel           National Institute of Fashion Technology  ...   NATIONAL INSTITUTE OF FASHION TECHNOLOGY, KANGRA  https://in.linkedin.com/in/shreya-patel-494793...    
-31  Shreya Patel  Architect | Design Manager | Project Co-ordinator  ...     Sarvajanik College of Engineering & Technology  https://in.linkedin.com/in/arshreyarpatel?trk=...    
-32  Shreya Patel                             Vice President at Citi  ...                   Shri Ram Institute of Technology  https://www.linkedin.com/in/shreya-patel-1987a...    
-33  Shreya Patel                   Business System Analyst at Roche  ...            Purdue School of Science - Indianapolis  https://www.linkedin.com/in/shreya-patel-47598...    
-34  Shreya Patel                    Business development specialist  ...  Veer Narmad South Gujarat University, Surat, +...  https://in.linkedin.com/in/shreya-patel-102001...    
-35  Shreya Patel  Automation QA Analyst with In-Depth Knowledge ...  ...                            Humber College, +1 more  https://ca.linkedin.com/in/shreya-patel-qa?trk...    
-36     Shreya P.  Former SWE intern @Microsoft | Nirma Universit...  ...        Nirma University, Ahmedabad, Gujarat, India  https://in.linkedin.com/in/shreyaaaptel?trk=pe...    
-37  Shreya Patel                  Student at University of Waterloo  ...                    University of Waterloo, +1 more  https://ca.linkedin.com/in/shreya-patel-77b97a...    
-38  SHREYA PATEL           Talent acquisition specialist at Task us  ...                        Devi Ahilya Vishwavidyalaya  https://in.linkedin.com/in/shreya-patel-b26457...    
-39  Shreya Patel                                                     ...                                                     https://www.linkedin.com/in/shreyadpatel?trk=p...    
-40  Shreya Patel  Scaling SaaS Brands with High-Quality Links | ...  ...                              Saurashtra University  https://in.linkedin.com/in/shreyapatel2109?trk...    
-41  Shreya Patel                                                     ...                                          , +1 more  https://ca.linkedin.com/in/shreya-patel-105957...    
-42     Shreya P.                                                     ...                                                     https://ca.linkedin.com/in/shreya-p-5103b5210?...    
-43  Shreya Patel  MBA Candidate at Alliance Manchester Business ...  ...                     University of Reading, +1 more  https://uk.linkedin.com/in/shreya-patel437?trk...    
-44  Shreya Patel                                                     ...                                          , +1 more  https://ca.linkedin.com/in/shreya9patel?trk=pe...    
-45  Shreya Patel                                                     ...                                          , +1 more  https://www.linkedin.com/in/shreya-m-patel?trk...    
-46  Shreya Patel        Python Developer at EMC Insurance Companies  ...                                                     https://www.linkedin.com/in/shreya-patel-69538...    
-47  Shreya Patel  Founder @ RAAS | Creative Entrepreneurship, Ma...  ...        The Maharaja Sayajirao University of Baroda  https://www.linkedin.com/in/shreya-patel-47291...    
-48  Shreya Patel                                                     ...                                          , +3 more  https://ca.linkedin.com/in/shreya0206?trk=peop...    
-49  Shreya Patel                                  Shopify Developer  ...             R. N. G. Patel Institute of Technology  https://in.linkedin.com/in/shreya-patel-796ab9...    
 
-[50 rows x 6 columns]
+[10 rows x 6 columns]
 
 ```
 
-### Scrape user profile
+### Scraping Specific User Profile:
 
-1. Open the `user_profile_scraper.py` file.
+1. Open `user_profile_scraper.py`.
 
-2. Update the `url` variable with the link of the profile of the user.
+2. Update the `url` variable with the user profile URL.
 
-3. Run the `user_profile_scraper.py` file:
+3. Run the script:
 
     ```bash
     python user_profile_scraper.py
     ```
 
-4. The script will fetch available data from the profile. For example, for https://uk.linkedin.com/in/mananpatel9?trk=people-guest_people_search-card, the output will be in format:
+4. Example Output: JSON data of the user:
 
-   ```bash{
+   ```bash
+   {
     "name": "Manan Patel",
     "headline": "Summer Strategy Consultant @ BYD | University of Warwick | BSc Computer Science with Business Analytics",
     "company": "BYD EUROPE",
@@ -385,5 +357,14 @@ This Python-based application leverages Charles Proxy, requests, and BeautifulSo
             "name": "English",
             "proficiency": "Native or bilingual proficiency"
         }
-    ]}
-  ```
+    ]
+    }```
+
+## Error Handling:
+
+1. Rate Limiting: If you are blocked, consider adding delays between requests or using proxies.
+2. Parsing Errors: Occasionally, LinkedIn may update its HTML structure, causing the scraper to break. In such cases, raise an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
