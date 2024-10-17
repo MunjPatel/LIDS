@@ -13,12 +13,15 @@ import warnings
 
 fake = faker.Faker()
 
+# Generates a random string of the specified length using letters and digits
 def generate_random_string(length=16):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
+# Generates time-stamp corresponding to the instant of code-execution
 def generate_timestamp():
     return int(time.time())
 
+# Generates a set of random cookies with timestamps and unique identifiers for session management
 def generate_cookies():
     current_timestamp = generate_timestamp()
     expiration_timestamp = current_timestamp + 86400  # 24 hours from now
@@ -34,6 +37,7 @@ def generate_cookies():
     }
     return cookies
 
+# Generates a table of profiles corresponding to the provided first and last name
 def generate_profile_links(first_name, last_name):
     headers = {
         'Host': 'www.linkedin.com',
@@ -96,9 +100,7 @@ def generate_profile_links(first_name, last_name):
             })
         return extracted_profiles
 
-    # Iterate through pages
-    page = 1
-    params['page'] = 1
+    params['page'] = page
     session.cookies.update(generate_cookies())
     response = session.get('https://www.linkedin.com/pub/dir', params=params, headers=headers, verify=False)
 
@@ -114,5 +116,5 @@ def generate_profile_links(first_name, last_name):
     return profile_results
 
 # Example usage
-profiles = generate_profile_links(first_name='Shreya', last_name='Patel')
+profiles = generate_profile_links(first_name='Shreya', last_name='Patel') # Replace with desired first and last name
 print(profiles)
