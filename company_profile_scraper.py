@@ -12,10 +12,13 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter, Retry
 
+# Class to scrape LinkedIn company profiles
 class LinkedInScraper:
     def __init__(self):
+        # Initializing Faker for generating fake user agent strings
         self.fake = Faker()
 
+    # Function to generate random cookies for LinkedIn requests
     def generate_linkedin_cookies(self):
         try:
             current_timestamp = int(time.time())
@@ -33,6 +36,7 @@ class LinkedInScraper:
             }
             return cookies
         except Exception as e:
+            # Catch any error during cookie generation
             print(f"Error generating LinkedIn cookies: {e}")
             return {}
 
@@ -40,9 +44,11 @@ class LinkedInScraper:
         try:
             return self.fake.user_agent()
         except Exception as e:
+            # Return a default user-agent if Faker fails
             print(f"Error generating random user agent: {e}")
             return 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
-        
+
+    # Randomly choose a referer for the request headers    
     def random_referer(self):
         referers = [
             'https://www.google.com/',
@@ -51,6 +57,7 @@ class LinkedInScraper:
         ]
         return random.choice(referers)
 
+    # Function to randomize the sec-ch-ua headers for browser simulations
     def random_sec_ch_ua(self):
         sec_ch_ua = [
             '"Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"',
@@ -59,6 +66,7 @@ class LinkedInScraper:
         ]
         return random.choice(sec_ch_ua)
 
+    # Randomize the Accept-Language header for better simulation
     def random_accept_language(self):
         accept_languages = [
             'en-US,en;q=0.9',
@@ -67,6 +75,7 @@ class LinkedInScraper:
         ]
         return random.choice(accept_languages)
 
+    # Function to generate randomized request headers based on domain
     def get_random_headers(self, domain):
         try:
             headers = {
@@ -91,14 +100,17 @@ class LinkedInScraper:
             print(f"Error generating random headers: {e}")
             return {}
 
+    # Function to fetch a LinkedIn company page based on URL
     def search_linkedin_company(self, url):
         cookies = self.generate_linkedin_cookies()
         headers = self.get_random_headers(urlparse(url).hostname)
         
+        # Session for handling retries and setting cookies
         session = requests.Session()
         retries = Retry(total=50, backoff_factor=0.1, status_forcelist=[402, 403, 502, 503, 504])
         session.mount('https://', HTTPAdapter(max_retries=retries))
 
+        # Update session cookies with generated LinkedIn cookies
         session.cookies.update(cookies)
         
         try:
@@ -109,6 +121,7 @@ class LinkedInScraper:
             print(f"Error fetching LinkedIn page: {e}")
             return None
 
+    # Function to parse company profile information from LinkedIn HTML content
     def parse_company_info(self, html_content):
         try:
             soup = BeautifulSoup(html_content, 'html.parser')
@@ -235,7 +248,7 @@ class LinkedInScraper:
 
 # Example usage:
 scraper = LinkedInScraper()
-url = "https://www.linkedin.com/company/iamneoai?originalSubdomain=in"
+url = "https://www.linkedin.com/company/iamneoai?originalSubdomain=in" # Replace with desired company profile URL
 html_content = scraper.search_linkedin_company(url)
 if html_content:
     company_info = scraper.parse_company_info(html_content)
