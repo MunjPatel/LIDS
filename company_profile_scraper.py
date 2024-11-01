@@ -15,7 +15,6 @@ from requests.adapters import HTTPAdapter, Retry
 # Class to scrape LinkedIn company profiles
 class LinkedInScraper:
     def __init__(self):
-        # Initialize Faker for generating fake user agent strings
         self.fake = Faker()
 
     # Function to generate random cookies for LinkedIn requests
@@ -49,8 +48,7 @@ class LinkedInScraper:
             # Return a default user-agent if Faker fails
             print(f"Error generating random user agent: {e}")
             return 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
-
-    # Randomly choose a referer for the request headers
+        
     def random_referer(self):
         referers = [
             'https://www.google.com/',
@@ -126,8 +124,7 @@ class LinkedInScraper:
             print(f"Error fetching LinkedIn page: {e}")
             return None
 
-    # Function to parse company profile information from LinkedIn HTML content
-    def parse_company_info(self, html_content, url):
+    def parse_company_info(self, html_content):
         try:
             # Parse the HTML content using BeautifulSoup
             soup = BeautifulSoup(html_content, 'html.parser')
@@ -207,21 +204,15 @@ class LinkedInScraper:
 
             return company_profile
         except Exception as e:
-            print(f"Error parsing company information: {e}")
-            return None
+            print(f"Error parsing company profile: {e}")
+            return {}
 
-    # Main function to scrape company data from LinkedIn by URL
-    def scrape_company_data(self, url):
-        html_content = self.search_linkedin_company(url)
-        if html_content:
-            company_data = self.parse_company_info(html_content, url)
-            return company_data
-        return None
-
-# # Example usage of the scraper
-# if __name__ == '__main__':
-#     scraper = LinkedInScraper()
-#     company_url = "https://www.linkedin.com/company/linkedin/"  # Replace with desired company profile URL
-#     company_data = scraper.scrape_company_data(company_url)
-#     if company_data:
-#         print(json.dumps(company_data, indent=2))
+# Example usage:
+scraper = LinkedInScraper()
+url = "https://www.linkedin.com/company/iamneoai?originalSubdomain=in"
+html_content = scraper.search_linkedin_company(url)
+if html_content:
+    company_info = scraper.parse_company_info(html_content)
+    print(json.dumps(company_info, indent=4))
+else:
+    print("Failed to retrieve company information.")

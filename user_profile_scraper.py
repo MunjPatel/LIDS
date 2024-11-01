@@ -9,9 +9,11 @@ from faker import Faker
 
 fake = Faker()
 
+# Generates a random string of the specified length using letters and digits
 def generate_random_string(length):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
+# Generates a set of random cookies with timestamps and unique identifiers for session management
 def generate_random_cookies():
     timestamp = int(time.time())
     cookie_template = {
@@ -22,6 +24,7 @@ def generate_random_cookies():
     }
     return cookie_template
 
+# Extracts education details such as school name, degree, field of study, and dates from the LinkedIn profile page
 def extract_education(page_soup):
     try:
         html_content = page_soup.find('section', {'data-section': 'educationsDetails'})
@@ -66,6 +69,7 @@ def extract_education(page_soup):
     except Exception as e:
         return []
 
+# Extracts work experience including company name, job title, duration, location, and descriptions from the LinkedIn profile page
 def extract_experience(soup):
     try:
         experience_section = soup.find('section', {'data-section': 'experience'})
@@ -206,6 +210,7 @@ def extract_experience(soup):
     except Exception as e:
         return []
 
+# Extracts volunteer experience from the LinkedIn profile, including title, organization, duration, and descriptions
 def extract_volunteer_experience(soup):
     try:
         volunteer_experience_section = soup.find('section', {'data-section': 'volunteering'})
@@ -269,6 +274,7 @@ def extract_volunteer_experience(soup):
     except Exception as e:
         return []
     
+# Extracts languages spoken and proficiency levels listed on the LinkedIn profile
 def extract_languages(soup):
     languages = []
     try:
@@ -286,6 +292,7 @@ def extract_languages(soup):
         return languages
 
 
+# Extracts project information including project title, duration, and details from the LinkedIn profile
 def extract_projects(soup):
     try:
 
@@ -330,7 +337,7 @@ def extract_projects(soup):
     except Exception as e:
         return []
     
-
+# Extracts certifications including title, issuing organization, issue date, and credential details from the LinkedIn profile
 def extract_certifications(soup):
     certifications_section = soup.find('section', {'data-section': 'certifications'})
     if not certifications_section:
@@ -373,9 +380,11 @@ def extract_certifications(soup):
 
     return certifications_data
 
+# Generates a random user-agent string to mimic different browsers and devices for the requests
 def random_user_agent():
     return fake.user_agent()
 
+# Generates a random referer URL to simulate traffic coming from different sources (e.g., Google, Bing)
 def random_referer():
     referers = [
         'https://www.google.com/',
@@ -384,6 +393,7 @@ def random_referer():
     ]
     return random.choice(referers)
 
+# Generates a random sec-ch-ua header to indicate supported browser and version information
 def random_sec_ch_ua():
     sec_ch_ua = [
         '"Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"',
@@ -392,6 +402,7 @@ def random_sec_ch_ua():
     ]
     return random.choice(sec_ch_ua)
 
+# Generates a random 'accept-language' header to simulate different language preferences in the request
 def random_accept_language():
     accept_languages = [
         'en-US,en;q=0.9',
@@ -400,6 +411,7 @@ def random_accept_language():
     ]
     return random.choice(accept_languages)
 
+# Scrapes and extracts key information from the provided LinkedIn profile URL including name, job title, company, location, and more.
 def scrape_linkedin_profile(url):
     try:
         
