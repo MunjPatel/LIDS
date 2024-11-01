@@ -116,6 +116,6 @@ def generate_profile_links(first_name, last_name):
     
     return profile_results
 
-# Example usage
+# Example usage for module:
 profiles = generate_profile_links(first_name='Shreya', last_name='Patel')
 print(profiles)

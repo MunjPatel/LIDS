@@ -207,7 +207,7 @@ class LinkedInScraper:
             print(f"Error parsing company profile: {e}")
             return {}
 
-# Example usage:
+# Example usage for module:
 scraper = LinkedInScraper()
 url = "https://www.linkedin.com/company/iamneoai?originalSubdomain=in"
 html_content = scraper.search_linkedin_company(url)
