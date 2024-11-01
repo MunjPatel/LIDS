@@ -504,7 +504,7 @@ def scrape_linkedin_profile(url):
     except Exception as e:
         return json.dumps({"error": "An error occurred"}, indent=4)
     
-# # Example usage
-# url = 'https://www.linkedin.com/in/munj-patel-a1812b233/'
-# profile_summary = scrape_linkedin_profile(url)
-# print(profile_summary)
+# Example usage
+url = 'https://www.linkedin.com/in/munj-patel-a1812b233/'
+profile_summary = scrape_linkedin_profile(url)
+print(profile_summary)

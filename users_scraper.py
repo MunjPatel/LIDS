@@ -100,6 +100,7 @@ def generate_profile_links(first_name, last_name):
             })
         return extracted_profiles
 
+    page = 1
     params['page'] = page
     session.cookies.update(generate_cookies())
     response = session.get('https://www.linkedin.com/pub/dir', params=params, headers=headers, verify=False)
@@ -115,6 +116,6 @@ def generate_profile_links(first_name, last_name):
     
     return profile_results
 
-# # Example usage
-# profiles = generate_profile_links(first_name='Shreya', last_name='Patel')
-# print(profiles)
+# Example usage
+profiles = generate_profile_links(first_name='Shreya', last_name='Patel')
+print(profiles)
