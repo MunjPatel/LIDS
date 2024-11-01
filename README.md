@@ -376,6 +376,11 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
 - Rate Limiting: If you are blocked, consider adding delays between requests or using proxies.
 - Parsing Errors: Occasionally, LinkedIn may update its HTML structure, causing the scraper to break. In such cases, raise an issue or submit a pull request.
 
+## Learn More
+
+For a flowchart based explanation of the LIDS scraping approach, check out my Medium article: [LIDS: A Pragmatic Approach for LinkedIn Data Extraction](https://medium.com/@patelmunj2011/lida-a-pragmatic-approach-for-linkedin-data-extraction-eb64585be211).
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
