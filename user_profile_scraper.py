@@ -505,6 +505,6 @@ def scrape_linkedin_profile(url):
         return json.dumps({"error": "An error occurred"}, indent=4)
     
 # Example usage for module:
-url = 'https://www.linkedin.com/in/munj-patel-a1812b233/'
+url = 'https://uk.linkedin.com/in/mananpatel9'
 profile_summary = scrape_linkedin_profile(url)
 print(profile_summary)
