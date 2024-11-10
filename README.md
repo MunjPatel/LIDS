@@ -65,22 +65,15 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
 
    ```bash
    {
-    "name": "Google",
-    "profile_link": "https://www.linkedin.com/company/google?originalSubdomain=in",
-    "followers": 34403269,
+    "name": "iamneo (Formerly Examly)",
+    "profile_link": "https://www.linkedin.com/company/iamneoai/",
+    "followers": 22715,
     "industry": "Software Development",
-    "location": "Mountain View, CA  34,403,269 followers",
-    "website": "https://goo.gle/3DLEokh",
-    "company_size": "10,001+ employees",
-    "headquarters": "Mountain View, CA",
-    "type": "Public Company",
-    "founded": null,
-    "slogan": null,
-    "description": "A problem isn't truly solved until it's solved for all. Googlers build products that help create opportunities for everyone, whether down the street or across the globe. Bring your insight, imagination and a healthy disregard for the impossible. Bring everything that makes you unique. Together, we can build for everyone.\n\nCheck out our career opportunities at goo.gle/3DLEokh",
-    "logo_url": null,
-    "cover_image_url": null,
-    "employees": null,
-    "latest_updates": null
+    "location": "Coimbatore , Tamil Nadu   22,715 followers",
+    "website": "https://iamneo.ai/",
+    "company_size": "51-200 employees",
+    "headquarters": "Coimbatore , Tamil Nadu",
+    "company_type": null
    }
    ```
 
@@ -147,7 +140,7 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
             "location": "United Kingdom",
             "start_date": "Jun 2024",
             "end_date": "Present",
-            "duration": "5 months",
+            "duration": "6 months",
             "description": ""
         },
         {
@@ -157,13 +150,13 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
             "location": "United Kingdom",
             "start_date": "Jun 2024",
             "end_date": "Present",
-            "duration": "5 months",
+            "duration": "6 months",
             "description": ""
         },
         {
-            "title": "Summer Hedge Fund Intern",
+            "title": "Intern",
             "company": "Broad Reach Investment Management LLP",
-            "url": "https://uk.linkedin.com/company/broad-reach-investment-management-llp?trk=public_profile_experience-item_profile-section-card_image-click",
+            "url": "https://uk.linkedin.com/company/broad-reach-investment-management-llp?trk=public_profile_experience-item_profile-section-card_image-click",    
             "location": "London, England, United Kingdom",
             "start_date": "Jul 2023",
             "end_date": "Aug 2023",
@@ -178,16 +171,6 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
             "start_date": "Jan 2022",
             "end_date": "Mar 2022",
             "duration": "3 months",
-            "description": ""
-        },
-        {
-            "title": "Event Coordinator",
-            "company": "Warwick Punjabi Society",
-            "url": "https://uk.linkedin.com/company/warwick-punjabi-society?trk=public_profile_experience-item_profile-section-card_image-click",
-            "location": "Coventry, England, United Kingdom",
-            "start_date": "May 2021",
-            "end_date": "Mar 2022",
-            "duration": "11 months",
             "description": ""
         },
         {
@@ -216,7 +199,7 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
             "title": "Community Service",
             "organization": "BAPS Swaminarayan Sanstha",
             "organization_link": "https://www.linkedin.com/company/bapsswaminarayansanstha?trk=public_profile_volunteering-position_profile-section-card_subtitle-click",
-            "duration": "6 years 5 months",
+            "duration": "6 years 6 months",
             "date_range": {
                 "start": "Jun 2018",
                 "end": "Present"
@@ -228,7 +211,7 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
             "title": "Public Relations Coordinator",
             "organization": "National Hindu Students'\u200b Forum (UK)",
             "organization_link": "https://uk.linkedin.com/company/nhsf?trk=public_profile_volunteering-position_profile-section-card_subtitle-click",
-            "duration": "9 months",
+            "duration": "10 months",
             "date_range": {
                 "start": "Feb 2024",
                 "end": "Present"
@@ -239,21 +222,11 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
     ],
     "education": [
         {
-            "school": "University of Warwick - Warwick Business School",
-            "location": "",
-            "url": "https://uk.linkedin.com/school/warwick-business-school/?trk=public_profile_school_profile-section-card_image-click",
-            "start_date": "2023",
-            "end_date": "2025",
-            "degree": "Master of Science - MSc",
-            "field_of_study": "",
-            "description": ""
-        },
-        {
             "school": "University of Warwick",
             "location": "",
             "url": "https://uk.linkedin.com/school/uniofwarwick/?trk=public_profile_school_profile-section-card_image-click",
             "start_date": "2020",
-            "end_date": "2023",
+            "end_date": "2024",
             "degree": "Bachelor of Science - BSc Hons",
             "field_of_study": "",
             "description": ""
@@ -368,7 +341,7 @@ This tool scrapes publicly accessible data from LinkedIn profiles. Please ensure
             "proficiency": "Native or bilingual proficiency"
         }
     ]
-    }
+   }
    ```
 
 ## Error Handling
