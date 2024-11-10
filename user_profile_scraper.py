@@ -416,7 +416,7 @@ def scrape_linkedin_profile(url):
     try:
         
         session = requests.Session()
-        retries = Retry(total=50, backoff_factor=0.1, status_forcelist=[402, 403, 429, 502, 503, 504])
+        retries = Retry(total=50, backoff_factor=0.5, status_forcelist=[402, 403, 429, 502, 503, 504])
         session.mount('https://', HTTPAdapter(max_retries=retries))
 
         cookies = generate_random_cookies()

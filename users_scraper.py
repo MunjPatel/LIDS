@@ -66,7 +66,7 @@ def generate_profile_links(first_name, last_name):
     # Define retry strategy
     retry_strategy = Retry(
         total=50,
-        backoff_factor=0.1,
+        backoff_factor=0.5,
         status_forcelist=[402, 403, 429, 500, 502, 503, 504],
         allowed_methods=["HEAD", "GET", "OPTIONS"]
     )
