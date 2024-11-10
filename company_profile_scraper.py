@@ -108,7 +108,7 @@ class LinkedInScraper:
         
         # Session for handling retries and setting cookies
         session = requests.Session()
-        retries = Retry(total=50, backoff_factor=0.1, status_forcelist=[402, 403, 502, 503, 504])
+        retries = Retry(total=50, backoff_factor=0.51, status_forcelist=[402, 403, 502, 503, 504])
         session.mount('https://', HTTPAdapter(max_retries=retries))
 
         # Update session cookies with generated LinkedIn cookies
@@ -209,7 +209,7 @@ class LinkedInScraper:
 
 # Example usage for module:
 scraper = LinkedInScraper()
-url = "https://www.linkedin.com/company/iamneoai?originalSubdomain=in"
+url = "https://www.linkedin.com/company/iamneoai/"
 html_content = scraper.search_linkedin_company(url)
 if html_content:
     company_info = scraper.parse_company_info(html_content)
